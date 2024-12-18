@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Playwrite+DE+VA+Guides&display=swap');
+
+:root {
+    --background: #000;
+    --primary-color: #0B192C;
+    --secondary-color: #FF6500;
+    --accent-color: #175295;
+    --text-color: #f9f9f9;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: transparent; 
+    border-radius: 1000px;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color); 
+    border-radius: 1000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16pt;
+    color: var(--text-color);
+}  
+
+body {
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: "Playwrite DE VA Guides", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.wrapper {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#todo-input {
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+
+#todo-input:focus {
+    outline: none;
+}
+
+form {
+    position: relative;
+}
+
+#add-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+
+.todo {
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.todo .todo-text {
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 200ms ease-in-out;
+}
+
+.delete-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-button svg {
+    transition: 200ms ease-in-out;
+}
+
+.delete-button:hover svg {
+    fill: #ff0033;
+}
+
+.edit-button {
+    padding: 3px;
+    margin-right: 4px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-button svg {
+    transition: 200ms ease-in-out;
+}
+
+.edit-button:hover svg {
+    fill: var(--secondary-color);
+}
+
+.custom-checkbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+    background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+    fill: var(--text-color);
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+    color: rgb(125, 125, 125);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 12pt;
+    }
+
+    #add-button {
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+
+    h1 {
+        margin-top: 50px;
+        font-size: 15vw;
+    }
+}
