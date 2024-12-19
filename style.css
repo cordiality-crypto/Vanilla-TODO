@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Playwrite+DE+VA+Guides&display=swap');
 
 :root {
-    --background: #000;
-    --primary-color: #0B192C;
-    --secondary-color: #FF6500;
-    --accent-color: #175295;
-    --text-color: #f9f9f9;
+    --background: #121212;
+    --primary-color: #1A2E45;
+    --secondary-color: #FF8C42;
+    --accent-color: #5A9BD6;
+    --text-color: #EAEAEA;
 }
 
 ::-webkit-scrollbar {
